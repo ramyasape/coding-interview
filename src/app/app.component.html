@@ -1,0 +1,48 @@
+<div class="container" role="main">
+  <div class="mars-image-container">
+    <img class="mars-image" src="../assets/mars1.jpg"/>
+    <img class="robot-image" src="../assets/robot1.png" id="robot" [ngStyle]="{'left': robotLeft, 'bottom': robotBottom}"/>
+  </div>
+  <div class="mars-input-section">
+    <h1>Let's make some robots explore the mars</h1>
+    
+    <div class="mars-input-fields">
+      <p>Enter how big your mars is in your imagination?</p>
+      <div class="input-field-container">
+        <label for="totalMarsXAxisCoordinate">Enter X-axis coordinates</label>
+        <input placeholder="Please enter X-axis coordinates" [(ngModel)]="totalMarsCoordinateInputField.xAxis" value="" name="totalMarsXAxisCoordinate" id="totalMarsXAxisCoordinate"/>
+      </div>
+      <div class="input-field-container">
+        <label for="totalMarsYAxisCoordinate">Enter Y-axis coordinates</label>
+        <input placeholder="Please enter Y-axis coordinates" value="" [(ngModel)]="totalMarsCoordinateInputField.yAxis" (change)="readMarsData()" name="totalMarsYAxisCoordinate"/>
+      </div>
+    </div>
+
+    <div class="robots-input-fields" *ngIf="totalMarsCoordinateInputField.yAxis">
+      <p>Enter Initial coordinates for your robot and orientation</p>
+      <div class="input-field-container">
+        <label for="initialXAxisCoordinate">Enter X-axis coordinates</label>
+        <input placeholder="Please enter X-axis coordinates" value="" [(ngModel)]="initialRobotCoordinates.xAxis" name="initialXAxisCoordinate" id="initialXAxisCoordinate"/>
+      </div>
+      <div class="input-field-container">
+        <label for="initialYAxisCoordinate">Enter Y-axis coordinates</label>
+        <input placeholder="Please enter Y-axis coordinates" value="" [(ngModel)]="initialRobotCoordinates.yAxis" name="initialYAxisCoordinate" id="initialYAxisCoordinate"/>
+      </div>
+      <div class="input-field-container">
+        <label for="initialOrientation">Enter Orientation</label>
+        <input placeholder="Please enter Orientation" value="" [(ngModel)]="initialRobotCoordinates.orientation" name="initialOrientation" id="initialOrientation" (change)="readInitialCordinates()"/>
+      </div>
+    </div>
+
+    <div class="instruction-input-fields" *ngIf="totalMarsCoordinateInputField.yAxis && initialRobotCoordinates.orientation">
+      <p>Enter the instructions you want your robot to travel</p>
+      <div class="input-field-container">
+        <label for="instructions">Enter Robots Instructions</label>
+        <input placeholder="Please enter instructions" value="" [(ngModel)]="instructions" name="instructions" id="instructions"/>
+      </div>
+      <p class="bold">Your Robot's current coordinates are {{initialRobotCoordinates.xAxis}}, {{initialRobotCoordinates.yAxis}}, {{initialRobotCoordinates.orientation}} <span class="warning" *ngIf="robotLost">LOST</span>.</p>
+      <button type="button" (click)="moveRobot()">Submit Instructions</button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,84 @@
+body {
+    width: 100%;
+    font-family: 'Space Mono', monospace;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.warning {
+    color: red;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    background: #8B4242;
+    border-radius: 5px;
+    display: flex;
+}
+
+
+.mars-image-container {
+    width: 100%;
+    position: relative;
+    flex: 0 0 60%;
+
+    .mars-image {
+        width: 100%;
+        height: 100%;
+    }
+    .robot-image {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: left 1s ease-in, bottom 1s ease-in;
+    }
+}
+ 
+.mars-input-section {
+    flex: 0 0 35%;
+    padding: 25px;
+
+    .mars-input-fields, .robots-input-fields, .instruction-input-fields {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        margin: 25px 0;
+        p {
+            flex-basis: 100%;
+        }
+        .input-field-container {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 30%;
+            label {
+                color: #ffffff;
+            }
+            
+            input {
+                outline: none;
+                height: 30px;
+            }
+        }
+        button {
+            height: 30px;
+            background: #3380b3;
+            flex-basis: 100%;
+            margin-top: 15px;
+        }
+    }
+}
