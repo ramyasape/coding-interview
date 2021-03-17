@@ -3,11 +3,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
 # Steps to run this project locally
-1 : Clone this project https://github.com/ramyasape/coding-interview.git
-2 : Change directory. cd coding-interview
-3: Checkout master branch. git checkout master
-4 : npm install
-5 : ng serve
+1 : Clone this project https://github.com/ramyasape/coding-interview.git <br/>
+2 : Change directory. cd coding-interview <br/>
+3: Checkout master branch. git checkout master <br/>
+4 : npm install <br/>
+5 : ng serve <br/>
 
 ## Development server
 
